@@ -1,0 +1,237 @@
+/* ── ViaggioDetail ───────────────────────────────────────────── */
+.vd-page {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #07062b 0%, #0d0a50 35%, #1a0f7a 65%, #0a063d 100%);
+  color: #fff;
+  font-family: var(--sans);
+  overflow-x: hidden;
+}
+
+.vd-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 14px;
+  padding: 16px 40px 0;
+  transition: color 0.2s ease;
+}
+.vd-back:hover { color: #ffe500; }
+
+/* ── Hero ── */
+.vd-hero {
+  text-align: center;
+  padding: 48px 32px 40px;
+  position: relative;
+}
+.vd-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(255,229,0,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.vd-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,229,0,0.1);
+  border: 1px solid rgba(255,229,0,0.3);
+  border-radius: 100px;
+  padding: 5px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ffe500;
+  margin-bottom: 18px;
+}
+.vd-badge svg { width: 13px; height: 13px; color: #ffe500; }
+.vd-hero h1 {
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #fff;
+  margin: 0 0 12px;
+  line-height: 1.1;
+}
+.vd-hero h1 span { color: #ffe500; }
+.vd-hero p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.75);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── Nota info ── */
+.vd-nota-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  max-width: 1100px;
+  margin: 0 auto 36px;
+  padding: 14px 22px;
+  background: rgba(255,229,0,0.06);
+  border: 1px solid rgba(255,229,0,0.2);
+  border-radius: 12px;
+}
+
+@media (max-width: 640px) {
+  .vd-nota-box { margin: 0 16px 28px; }
+}
+
+.vd-nota-box svg { width: 18px; height: 18px; color: #ffe500; flex-shrink: 0; margin-top: 1px; }
+.vd-nota-box p { font-size: 13px; color: rgba(255,255,255,0.75); margin: 0; line-height: 1.55; }
+
+/* ── Sezioni ── */
+.vd-section {
+  max-width: 1100px;
+  margin: 0 auto 44px;
+  padding: 0 40px;
+}
+
+@media (max-width: 640px) {
+  .vd-section { padding: 0 16px; margin-bottom: 32px; }
+}
+
+.vd-section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.vd-section-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(255,229,0,0.1);
+  border: 1px solid rgba(255,229,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.vd-section-icon svg { width: 24px; height: 24px; color: #ffe500; }
+
+.vd-section-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 2px;
+  text-align: left;
+}
+.vd-section-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  margin: 0;
+}
+
+/* ── Grid card ── */
+.vd-grid {
+  display: grid;
+  gap: 14px;
+}
+.vd-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.vd-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.vd-grid-4 { grid-template-columns: repeat(2, 1fr); }
+
+@media (max-width: 900px) {
+  .vd-grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .vd-grid-2,
+  .vd-grid-3,
+  .vd-grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ── Card compagnia ── */
+.vd-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 20px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+.vd-card:hover {
+  border-color: rgba(255,229,0,0.35);
+  background: rgba(255,229,0,0.04);
+  transform: translateY(-3px);
+}
+
+.vd-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.vd-card-nome {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffe500;
+  margin: 0;
+}
+.vd-card-tipo {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.06);
+  border-radius: 6px;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+.vd-card-tipo svg { width: 12px; height: 12px; color: rgba(255,229,0,0.6); flex-shrink: 0; }
+
+.vd-card-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  margin: 0;
+  line-height: 1.55;
+  flex: 1;
+}
+
+/* ── Contact ── */
+.vd-contact {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 32px 40px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .vd-contact { flex-direction: column; text-align: center; padding: 24px 20px 36px; }
+}
+
+.vd-contact-text { font-size: 18px; font-weight: 700; color: #fff; margin: 0; }
+.vd-contact-text span { color: #ffe500; }
+.vd-contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
+.vd-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: rgba(255,229,0,0.1);
+  border: 1px solid rgba(255,229,0,0.3);
+  color: #ffe500;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.vd-contact-btn svg { width: 15px; height: 15px; color: #ffe500; flex-shrink: 0; }
+.vd-contact-btn:hover { background: rgba(255,229,0,0.2); border-color: rgba(255,229,0,0.6); }

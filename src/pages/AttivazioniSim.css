@@ -1,0 +1,349 @@
+/* ── AttivazioniSim ──────────────────────────────────────────── */
+.sim-page {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #07062b 0%, #0d0a50 35%, #1a0f7a 65%, #0a063d 100%);
+  color: #fff;
+  font-family: var(--sans);
+  overflow-x: hidden;
+}
+
+.sim-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 14px;
+  padding: 16px 40px 0;
+  transition: color 0.2s ease;
+}
+.sim-back:hover { color: #ffe500; }
+
+/* ── Hero ── */
+.sim-hero {
+  text-align: center;
+  padding: 48px 32px 40px;
+  position: relative;
+}
+.sim-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(255,229,0,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.sim-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,229,0,0.1);
+  border: 1px solid rgba(255,229,0,0.3);
+  border-radius: 100px;
+  padding: 5px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ffe500;
+  margin-bottom: 18px;
+}
+.sim-badge svg { width: 13px; height: 13px; color: #ffe500; }
+.sim-hero h1 {
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #fff;
+  margin: 0 0 12px;
+  line-height: 1.1;
+}
+.sim-hero h1 span { color: #ffe500; }
+.sim-hero p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.75);
+  max-width: 460px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── Requisiti banner ── */
+.sim-requisiti {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 16px 24px;
+  background: rgba(255,229,0,0.06);
+  border: 1px solid rgba(255,229,0,0.2);
+  border-radius: 12px;
+}
+
+@media (max-width: 640px) {
+  .sim-requisiti { margin: 0 16px 28px; }
+}
+
+.sim-req-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255,229,0,0.1);
+  border: 1px solid rgba(255,229,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.sim-req-icon svg { width: 20px; height: 20px; color: #ffe500; }
+.sim-req-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffe500;
+  margin: 0 0 3px;
+}
+.sim-req-desc { font-size: 13px; color: rgba(255,255,255,0.75); margin: 0; line-height: 1.5; }
+.sim-req-desc strong { color: #fff; }
+
+/* ── Sezioni operatori ── */
+.sim-section {
+  max-width: 1100px;
+  margin: 0 auto 48px;
+  padding: 0 40px;
+  text-align: left;
+}
+
+@media (max-width: 640px) {
+  .sim-section { padding: 0 16px; }
+}
+
+.sim-operator-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.sim-op-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.sim-op-icon svg { width: 26px; height: 26px; }
+.sim-op-icon.digi {
+  background: rgba(30,144,255,0.15);
+  border: 1px solid rgba(30,144,255,0.3);
+}
+.sim-op-icon.digi svg { color: #1e90ff; }
+.sim-op-icon.lyca {
+  background: rgba(30,144,255,0.15);
+  border: 1px solid rgba(30,144,255,0.3);
+}
+.sim-op-icon.lyca svg { color: #1e90ff; }
+.sim-op-title { font-size: 22px; font-weight: 800; color: #fff; margin: 0 0 3px; }
+.sim-op-sub { font-size: 13px; color: rgba(255,255,255,0.75); margin: 0; }
+
+/* ── Tipo SIM ── */
+.sim-tipo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 640px) {
+  .sim-tipo-grid { grid-template-columns: 1fr; }
+}
+
+.sim-tipo-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 16px 18px;
+  transition: border-color 0.25s ease;
+}
+.sim-tipo-card.active {
+  border-color: rgba(255,229,0,0.3);
+  background: rgba(255,229,0,0.04);
+}
+.sim-tipo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255,229,0,0.1);
+  border: 1px solid rgba(255,229,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.sim-tipo-icon svg { width: 18px; height: 18px; color: #ffe500; }
+.sim-tipo-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffe500;
+  margin: 0 0 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.tag-promo {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background: rgba(255,229,0,0.15);
+  border: 1px solid rgba(255,229,0,0.3);
+  color: #ffe500;
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+.sim-tipo-desc { font-size: 13px; color: rgba(255,255,255,0.75); margin: 0; line-height: 1.5; }
+
+/* ── Piani grid ── */
+.sim-piani-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.sim-piani-grid.two-col {
+  grid-template-columns: repeat(2, minmax(0, 340px));
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .sim-piani-grid { grid-template-columns: repeat(2, 1fr); }
+  .sim-piani-grid.two-col { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .sim-piani-grid { grid-template-columns: 1fr; }
+  .sim-piani-grid.two-col { grid-template-columns: 1fr; }
+}
+
+.sim-piano-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 18px;
+  padding: 24px 20px;
+  position: relative;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sim-piano-card:hover {
+  border-color: rgba(255,229,0,0.35);
+  background: rgba(255,229,0,0.04);
+  transform: translateY(-4px);
+}
+.sim-piano-card.highlight {
+  border-color: rgba(255,229,0,0.45);
+  background: rgba(255,229,0,0.06);
+}
+
+.piano-badge {
+  position: absolute;
+  top: -1px;
+  right: 16px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: #ffe500;
+  color: #07062b;
+  border-radius: 0 0 8px 8px;
+  padding: 3px 10px;
+}
+
+.piano-giga { font-size: 32px; font-weight: 900; color: #ffe500; letter-spacing: -1px; line-height: 1; }
+.piano-prezzo { display: flex; align-items: baseline; gap: 3px; }
+.piano-euro { font-size: 22px; font-weight: 800; color: #fff; }
+.piano-periodo { font-size: 13px; color: rgba(255,255,255,0.4); }
+.piano-nome {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.45);
+  margin: 0 0 8px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 10px;
+}
+.piano-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.piano-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.4;
+}
+.piano-features li svg { width: 14px; height: 14px; color: #4ade80; flex-shrink: 0; margin-top: 1px; }
+
+/* ── Nota roaming ── */
+.sim-nota {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+.sim-nota svg { width: 18px; height: 18px; color: rgba(255,229,0,0.6); flex-shrink: 0; margin-top: 1px; }
+.sim-nota p { font-size: 13px; color: rgba(255,255,255,0.75); margin: 0; line-height: 1.5; }
+.sim-nota strong { color: rgba(255,255,255,0.9); }
+
+/* ── Contact ── */
+.sim-contact {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 32px 40px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .sim-contact {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px 20px 36px;
+  }
+}
+
+.sim-contact-text { font-size: 18px; font-weight: 700; color: #fff; margin: 0; }
+.sim-contact-text span { color: #ffe500; }
+.sim-contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
+.sim-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: rgba(255,229,0,0.1);
+  border: 1px solid rgba(255,229,0,0.3);
+  color: #ffe500;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.sim-contact-btn svg { width: 15px; height: 15px; color: #ffe500; flex-shrink: 0; }
+.sim-contact-btn:hover { background: rgba(255,229,0,0.2); border-color: rgba(255,229,0,0.6); }

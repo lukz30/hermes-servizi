@@ -1,0 +1,217 @@
+/* ── PagamentiDetail ─────────────────────────────────────────── */
+.detail-page {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #07062b 0%, #0d0a50 35%, #1a0f7a 65%, #0a063d 100%);
+  color: #fff;
+  font-family: var(--sans);
+  overflow-x: hidden;
+}
+.detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 14px;
+  padding: 16px 40px 0;
+  transition: color 0.2s ease;
+}
+.detail-back:hover { color: #ffe500; }
+
+.detail-hero {
+  text-align: center;
+  padding: 56px 32px 48px;
+  position: relative;
+}
+.detail-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(255,229,0,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.detail-hero h1 {
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #fff;
+  margin: 0 0 14px;
+  line-height: 1.1;
+}
+.detail-hero h1 span { color: #ffe500; }
+.detail-hero p {
+  font-size: 17px;
+  color: rgba(255,255,255,0.6);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.detail-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px 56px;
+}
+
+@media (max-width: 640px) {
+  .detail-section { padding: 0 16px 40px; }
+}
+
+.section-title { font-size: 22px; font-weight: 700; color: #fff; margin: 0 0 8px; }
+.section-subtitle { font-size: 15px; color: rgba(255,255,255,0.55); margin: 0 0 28px; line-height: 1.6; }
+
+/* ── Tariffe grid ── */
+.tariffe-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+
+.tariffa-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 14px 20px;
+  transition: border-color 0.25s ease;
+}
+.tariffa-card:hover { border-color: rgba(255,229,0,0.3); }
+
+@media (max-width: 500px) {
+  .tariffa-card { flex-direction: column; align-items: flex-start; }
+}
+
+.tariffa-left { display: flex; align-items: center; gap: 12px; }
+.tariffa-dot { width: 7px; height: 7px; border-radius: 50%; background: #ffe500; flex-shrink: 0; }
+.tariffa-label { font-size: 15px; font-weight: 600; color: #fff; margin: 0; }
+.tariffa-right { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+.tariffa-prezzo { font-size: 18px; font-weight: 800; color: #ffe500; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tariffa-nota { font-size: 12px; color: rgba(255,255,255,0.45); background: rgba(255,255,255,0.06); border-radius: 6px; padding: 3px 8px; white-space: nowrap; }
+
+/* ── Over 70 box ── */
+.over70-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(255,229,0,0.06);
+  border: 1px solid rgba(255,229,0,0.25);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-top: 8px;
+}
+.over70-box svg { width: 20px; height: 20px; color: #ffe500; flex-shrink: 0; margin-top: 2px; }
+.over70-box p { font-size: 13px; color: rgba(255,255,255,0.65); margin: 0; line-height: 1.6; }
+.over70-box strong { color: #ffe500; }
+
+/* ── Section divider ── */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 0 40px;
+}
+
+@media (max-width: 640px) {
+  .section-divider { padding: 0 16px; }
+}
+
+.section-divider::before,
+.section-divider::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+.section-divider span { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #ffe500; white-space: nowrap; }
+
+/* ── Partner badges ── */
+.partners-row { display: flex; gap: 14px; margin-bottom: 28px; flex-wrap: wrap; justify-content: center; }
+.partner-badge { display: flex; align-items: center; gap: 10px; border-radius: 12px; padding: 10px 18px; font-weight: 700; }
+.partner-iniziali { font-size: 16px; font-weight: 900; letter-spacing: 1px; }
+.partner-nome { font-size: 14px; }
+
+/* ── Transfer cards ── */
+.transfer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+  .transfer-grid { grid-template-columns: 1fr; }
+}
+
+.transfer-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 24px 22px;
+}
+.transfer-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.transfer-card-header svg { width: 20px; height: 20px; flex-shrink: 0; }
+.transfer-card-header.invio svg { color: #ffe500; }
+.transfer-card-header.ritiro svg { color: #ffe500; }
+.transfer-card-header h3 { font-size: 16px; font-weight: 700; color: #fff; margin: 0; }
+.transfer-subtitle { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #ffe500; margin: 0 0 10px; }
+.transfer-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.transfer-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.45; }
+.transfer-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #ffe500; flex-shrink: 0; margin-top: 5px; }
+
+/* ── Tariffa variabile box ── */
+.tariffa-variabile-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.tariffa-variabile-box svg { width: 20px; height: 20px; color: #ffe500; flex-shrink: 0; margin-top: 2px; }
+.tariffa-variabile-box > div { flex: 1; text-align: left; }
+.tariffa-variabile-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffe500;
+  margin: 0 0 10px;
+}
+.tariffa-variabile-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.tariffa-variabile-list li { font-size: 14px; color: rgba(255,255,255,0.75); display: flex; align-items: flex-start; gap: 10px; line-height: 1.45; }
+.tariffa-variabile-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #ffe500; flex-shrink: 0; margin-top: 5px; }
+.tariffa-variabile-list em { color: rgba(255,255,255,0.75); font-style: normal; }
+.tariffa-variabile-note { margin-top: 10px; font-size: 13px; color: rgba(255,255,255,0.5); font-style: italic; }
+
+/* ── Contact footer ── */
+.detail-contact {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 36px 40px 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .detail-contact { flex-direction: column; text-align: center; padding: 28px 20px 40px; }
+}
+
+.detail-contact-text { font-size: 20px; font-weight: 700; color: #fff; margin: 0; }
+.detail-contact-text span { color: #ffe500; }
+.detail-contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
+.detail-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: rgba(255,229,0,0.1);
+  border: 1px solid rgba(255,229,0,0.3);
+  color: #ffe500;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.detail-contact-btn svg { width: 16px; height: 16px; color: #ffe500; flex-shrink: 0; }
+.detail-contact-btn:hover { background: rgba(255,229,0,0.2); border-color: rgba(255,229,0,0.6); }

@@ -1,0 +1,121 @@
+/* Reset di base e font */
+#root, body, html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Sfondo fisso su tutta la pagina */
+body {
+  width: 100vw;
+  min-height: 100vh;
+  background: radial-gradient(circle farthest-corner at 50% 30%, #111a60 0%, #05071b 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Container hero */
+.hero-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 10%;
+}
+
+/* Corpo centrale */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 650px;
+  width: 100%;
+}
+
+/* Logo centrale */
+.hero-main-logo {
+  max-width: 100%;
+  width: 500px;
+  height: auto;
+  margin-bottom: -80px;
+  object-fit: contain;
+}
+
+/* Descrizione */
+.hero-description {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-weight: 300;
+  position: relative;
+  z-index: 2;
+}
+
+/* Pulsante */
+.hero-button {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #f7e315;
+  color: #05071b;
+  border: none;
+  padding: 16px 42px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* FIX: evita che il testo venga tagliato su schermi piccoli */
+  white-space: nowrap;
+}
+.hero-button:hover {
+  background-color: #ffffff;
+  color: #05071b;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 15px 25px rgba(247,227,21,0.3);
+}
+
+/* ── Tablet ── */
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 30px 5%;
+  }
+  .hero-main-logo {
+    width: 320px;
+    margin-bottom: -55px;
+  }
+  .hero-description {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+}
+
+/* ── Mobile piccolo ── */
+@media (max-width: 400px) {
+  .hero-main-logo {
+    width: 240px;
+    margin-bottom: -40px;
+  }
+  .hero-button {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+  }
+  .hero-description {
+    font-size: 0.9rem;
+  }
+}

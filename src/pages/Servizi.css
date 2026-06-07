@@ -1,0 +1,506 @@
+/* ── Servizi Page ────────────────────────────────────────────── */
+
+.servizi-page {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #07062b 0%, #0d0a50 35%, #1a0f7a 65%, #0a063d 100%);
+  color: #fff;
+  font-family: var(--sans);
+  overflow-x: hidden;
+  position: relative;
+}
+
+.servizi-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Hero ── */
+.servizi-hero {
+  text-align: center;
+  padding: 72px 32px 52px;
+  position: relative;
+}
+
+.servizi-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(255,229,0,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.servizi-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,229,0,0.12);
+  border: 1px solid rgba(255,229,0,0.35);
+  border-radius: 100px;
+  padding: 6px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ffe500;
+  margin-bottom: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.servizi-badge:hover {
+  background: rgba(255,229,0,0.22);
+  border-color: rgba(255,229,0,0.65);
+  box-shadow: 0 0 18px rgba(255,229,0,0.2);
+}
+
+.badge-pin-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.servizi-hero h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #fff;
+  margin: 0 0 16px;
+  line-height: 1.1;
+}
+.servizi-hero h1 span { color: #ffe500; }
+
+.servizi-hero p {
+  font-size: 18px;
+  color: rgba(255,255,255,0.6);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── Grid ── */
+.servizi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 0 40px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .servizi-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 24px 60px;
+  }
+}
+@media (max-width: 640px) {
+  .servizi-grid {
+    grid-template-columns: 1fr;
+    padding: 0 16px 48px;
+    gap: 16px;
+  }
+}
+
+/* ── Card ── */
+.service-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 32px 28px;
+  position: relative;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+  opacity: 0;
+  animation: cardReveal 0.55s ease forwards;
+}
+
+.service-card:nth-child(1) { animation-delay: 0.05s; }
+.service-card:nth-child(2) { animation-delay: 0.12s; }
+.service-card:nth-child(3) { animation-delay: 0.19s; }
+.service-card:nth-child(4) { animation-delay: 0.26s; }
+.service-card:nth-child(5) { animation-delay: 0.33s; }
+.service-card:nth-child(6) { animation-delay: 0.40s; }
+.service-card:nth-child(7) { animation-delay: 0.47s; }
+
+@keyframes cardReveal {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* glow top-left corner */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,229,0,0.15) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  border-color: rgba(255,229,0,0.5);
+  background: rgba(255,229,0,0.06);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(255,229,0,0.2),
+    inset 0 1px 0 rgba(255,229,0,0.15);
+}
+.service-card:hover::before { opacity: 1; }
+
+/* ── Card Icon ── */
+.card-icon-wrap {
+  width: 62px;
+  height: 62px;
+  border-radius: 16px;
+  background: rgba(255,229,0,0.1);
+  border: 1px solid rgba(255,229,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: background 0.3s ease, transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.card-icon-wrap svg {
+  width: 28px;
+  height: 28px;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+.service-card:hover .card-icon-wrap {
+  background: rgba(255,229,0,0.18);
+  transform: rotate(-4deg) scale(1.1);
+}
+
+/* ── Card Title ── */
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffe500;
+  margin: 0 0 16px;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  font-family: var(--heading);
+}
+
+/* ── Card List ── */
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.card-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.45;
+  transition: color 0.2s ease;
+}
+.service-card:hover .card-list li { color: rgba(255,255,255,0.92); }
+.card-list li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffe500;
+  margin-top: 5px;
+  transition: transform 0.2s ease;
+}
+.service-card:hover .card-list li::before { transform: scale(1.4); }
+
+.card-note {
+  margin-top: 0;
+  padding-top: 14px;
+  font-size: 12px;
+  color: rgba(255,229,0,0.55);
+  font-style: italic;
+  text-align: right;
+}
+
+.card-spacer { flex: 1; }
+
+/* ── Orari ── */
+.servizi-orari {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 40px;
+  box-sizing: border-box;
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+@media (max-width: 640px) {
+  .servizi-orari {
+    padding: 24px 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.orari-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(255,229,0,0.1);
+  border: 1px solid rgba(255,229,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.orari-icon-wrap svg { width: 22px; height: 22px; color: #ffe500; }
+
+.orari-body { display: flex; flex-direction: column; gap: 8px; }
+
+.orari-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin: 0;
+}
+
+.orari-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .orari-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+.orari-giorni {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.6);
+  min-width: 80px;
+}
+.orari-fasce { display: flex; align-items: center; gap: 10px; }
+
+.orari-fascia {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.3px;
+}
+.orari-sep { color: rgba(255,255,255,0.25); font-size: 18px; }
+.orari-chiuso-row { margin-top: 2px; }
+.orari-chiuso {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,80,80,0.75);
+  background: rgba(255,80,80,0.1);
+  border: 1px solid rgba(255,80,80,0.2);
+  border-radius: 6px;
+  padding: 2px 8px;
+}
+
+/* ── Contatti Footer ── */
+.servizi-contact {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 40px 40px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .servizi-contact {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 32px 20px 48px;
+  }
+}
+
+.contact-label {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 6px;
+}
+.contact-tagline { font-size: 22px; font-weight: 700; color: #fff; }
+.contact-tagline span { color: #ffe500; }
+
+.contact-links { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.75);
+  font-size: 15px;
+  transition: color 0.2s ease;
+  min-height: 44px;
+}
+.contact-link:hover { color: #ffe500; }
+
+.contact-icon {
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,229,0,0.12);
+  border: 1px solid rgba(255,229,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  align-self: center;
+  transition: background 0.2s ease;
+}
+.contact-icon svg { width: 16px; height: 16px; color: #ffe500; }
+.contact-link:hover .contact-icon { background: rgba(255,229,0,0.25); }
+
+/* ── Back button ── */
+.servizi-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 14px;
+  padding: 16px 40px 0;
+  transition: color 0.2s ease;
+}
+.servizi-back:hover { color: #ffe500; }
+
+/* ── Card arrow ── */
+.card-arrow-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,229,0,0.1);
+  border: 1px solid rgba(255,229,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffe500;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  z-index: 1;
+}
+.card-arrow-btn svg { width: 14px; height: 14px; color: #ffe500; flex-shrink: 0; }
+.card-arrow-btn:hover {
+  background: rgba(255,229,0,0.22);
+  border-color: rgba(255,229,0,0.6);
+  transform: translate(1px,-1px);
+}
+
+.card-arrow-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: rgba(255,229,0,0.7);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 14px;
+  width: 100%;
+}
+.card-arrow-label svg { width: 13px; height: 13px; transition: transform 0.2s ease; }
+.card-arrow-label:hover { color: #ffe500; }
+.card-arrow-label:hover svg { transform: translate(2px,-2px); }
+
+/* ── Clickable list items ── */
+.card-list-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(255,255,255,0.75);
+  text-decoration: underline;
+  text-decoration-color: rgba(255,229,0,0.4);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+.card-list-link svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  color: #ffe500;  /* aggiunto */
+  transition: transform 0.2s ease;
+}
+.card-list-link:hover {
+  color: #ffe500;
+  text-decoration-color: #ffe500;
+}
+.card-list-link:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* ── FIX overflow orizzontale mobile ── */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.servizi-page {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.service-card {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .servizi-hero {
+    padding: 48px 16px 36px;
+  }
+  .servizi-hero p {
+    font-size: 15px;
+    padding: 0 8px;
+  }
+  .servizi-back {
+    padding: 16px 16px 0;
+  }
+}
