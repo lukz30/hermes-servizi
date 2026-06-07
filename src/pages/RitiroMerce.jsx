@@ -71,7 +71,7 @@ const corrieri = [
   {
     nome: 'FedEx / TNT',
     logo: logoFedex,
-    desc: 'Spedizioni express internazionali. Affidabilità globale con tracciamento preciso.',
+    desc: 'Spedizioni espresse internazionali. Affidabilità globale con tracciamento preciso.',
     tracking: 'https://www.fedex.com/it-it/tracking.html',
   },
 ];

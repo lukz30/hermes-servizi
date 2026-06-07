@@ -149,21 +149,21 @@ function ViaggioDetail() {
       <Sezione
         icon={<SvgTrain />}
         titolo="Treni"
-        sottotitolo="Biglietti e abbonamenti ferroviari"
+        sottotitolo="Biglietti e abbonamenti ferroviari."
         items={treni}
       />
 
       <Sezione
         icon={<SvgBus />}
         titolo="Pullman"
-        sottotitolo="Autobus nazionali e internazionali"
+        sottotitolo="Autobus nazionali e internazionali."
         items={pullman}
       />
 
       <Sezione
         icon={<SvgFerry />}
         titolo="Traghetti e Aliscafi"
-        sottotitolo="Navigazione costiera e insulare"
+        sottotitolo="Navigazione costiera e insulare."
         items={traghetti}
       />
 

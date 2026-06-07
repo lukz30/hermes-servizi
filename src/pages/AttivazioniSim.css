@@ -267,7 +267,7 @@
 .piano-giga { font-size: 32px; font-weight: 900; color: #ffe500; letter-spacing: -1px; line-height: 1; }
 .piano-prezzo { display: flex; align-items: baseline; gap: 3px; }
 .piano-euro { font-size: 22px; font-weight: 800; color: #fff; }
-.piano-periodo { font-size: 13px; color: rgba(255,255,255,0.4); }
+.piano-periodo { font-size: 13px; color: rgba(255,255,255,0.75); }
 .piano-nome {
   font-size: 13px;
   font-weight: 600;

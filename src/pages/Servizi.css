@@ -282,7 +282,7 @@
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,229,0,1);
   margin: 0;
 }
 
@@ -320,11 +320,7 @@
 .orari-chiuso {
   font-size: 13px;
   font-weight: 600;
-  color: rgba(255,80,80,0.75);
-  background: rgba(255,80,80,0.1);
-  border: 1px solid rgba(255,80,80,0.2);
-  border-radius: 6px;
-  padding: 2px 8px;
+  color: #fff;
 }
 
 /* ── Contatti Footer ── */
@@ -367,13 +363,18 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: rgba(255,229,0,0.5);
+  text-underline-offset: 3px;
   color: rgba(255,255,255,0.75);
   font-size: 15px;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
   min-height: 44px;
 }
-.contact-link:hover { color: #ffe500; }
+.contact-link:hover {
+  color: #ffe500;
+  text-decoration-color: #ffe500;
+}
 
 .contact-icon {
   width: 36px;
@@ -474,7 +475,10 @@
 .card-list-link:hover svg {
   transform: translate(2px, -2px);
 }
-
+.card-list-link:active {
+  color: rgba(255,255,255,0.75);
+  text-decoration-color: rgba(255,229,0,0.4);
+}
 /* ── FIX overflow orizzontale mobile ── */
 html, body {
   max-width: 100%;

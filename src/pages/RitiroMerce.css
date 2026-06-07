@@ -238,7 +238,7 @@
   max-width: 1100px;
   margin: 0 auto;
 }
-@media (max-width: 640px) {
+@media (max-width: 480px) {
   .ritiro-contact {
     flex-direction: column;
     text-align: center;

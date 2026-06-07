@@ -189,7 +189,7 @@ function Servizi() {
           </a>
           <a href="tel:+390899849153" className="contact-link">
             <span className="contact-icon"><PhoneIcon /></span>
-            089 9849153 / 350 0321970
+            089 9849153
           </a>
           <a
             href="https://www.instagram.com/hermesservizi.salerno"
