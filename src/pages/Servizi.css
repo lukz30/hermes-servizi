@@ -254,11 +254,26 @@
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .servizi-orari {
     padding: 24px 20px;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+  }
+
+  .orari-body {
+    align-items: center;
+  }
+
+  .orari-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .orari-giorni {
+    min-width: unset;
   }
 }
 
@@ -292,13 +307,7 @@
   gap: 16px;
 }
 
-@media (max-width: 480px) {
-  .orari-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-  }
-}
+
 
 .orari-giorni {
   font-size: 14px;
@@ -320,7 +329,7 @@
 .orari-chiuso {
   font-size: 13px;
   font-weight: 600;
-  color: #fff;
+  color:#fff;
 }
 
 /* ── Contatti Footer ── */
@@ -371,10 +380,7 @@
   transition: color 0.2s ease, text-decoration-color 0.2s ease;
   min-height: 44px;
 }
-.contact-link:hover {
-  color: #ffe500;
-  text-decoration-color: #ffe500;
-}
+.contact-link:hover { color: #ffe500; }
 
 .contact-icon {
   width: 36px;
@@ -475,10 +481,7 @@
 .card-list-link:hover svg {
   transform: translate(2px, -2px);
 }
-.card-list-link:active {
-  color: rgba(255,255,255,0.75);
-  text-decoration-color: rgba(255,229,0,0.4);
-}
+
 /* ── FIX overflow orizzontale mobile ── */
 html, body {
   max-width: 100%;

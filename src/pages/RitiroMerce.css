@@ -247,7 +247,7 @@
 }
 .ritiro-contact-text { font-size: 20px; font-weight: 700; color: #fff; margin: 0; }
 .ritiro-contact-text span { color: #ffe500; }
-.ritiro-contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
+.ritiro-contact-links { display: flex; gap: 12px; flex-wrap: nowrap; }
 .ritiro-contact-btn {
   display: inline-flex;
   align-items: center;
