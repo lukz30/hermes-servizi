@@ -198,7 +198,7 @@ function Servizi() {
             className="contact-link contact-link-ig"
           >
             <span className="contact-icon"><InstagramIcon /></span>
-            @hermesservizi.salerno
+            hermesservizi.salerno
           </a>
         </div>
       </div>

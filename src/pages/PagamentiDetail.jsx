@@ -23,7 +23,7 @@ const IcoRitiro = () => (
 const pagamenti = [
   { label: 'PagoPA',              tariffa: '€ 1,50' },
   { label: 'Bollettino Postale',  tariffa: '€ 1,50' },
-  { label: 'Bollettino Passaporto',tariffa: '€ 1,50' },
+  { label: 'Bollettino Passaporto',tariffa: '€ 1,60' },
   { label: 'MAV / RAV',           tariffa: '€ 1,50' },
   { label: 'Modello F24',         tariffa: '€ 1,50' },
   { label: 'Bollo Auto',          tariffa: '€ 1,60' },
