@@ -364,45 +364,7 @@
   margin-bottom: 6px;
 }
 .contact-tagline { font-size: 22px; font-weight: 700; color: #fff; }
-.contact-review-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  margin-top: 52px;
-  font-size: 22px;
-  font-weight: 700;
-  color: #fff;
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 229, 0, 0.5);
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-  transition: text-decoration-color 0.2s ease;
-}
-.contact-review-link:hover {
-  text-decoration-color: rgba(255, 229, 0, 0.5);
-}
-.contact-review-link svg {
-  width: 18px;
-  height: 18px;
-  color: #ffe500;
-  flex-shrink: 0;
-  transition: transform 0.2s ease;
-}
-.contact-review-link:hover svg {
-  transform: translate(2px, -2px);
-}
-.contact-review-link .review-word-yellow {
-  color: #ffe500;
-}
-.contact-review-link:hover {
-  color: #ffe500;
-}
 .contact-tagline span { color: #ffe500; }
-.servizi-contact > div:first-child {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
 
 .contact-links { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
 

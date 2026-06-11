@@ -138,8 +138,10 @@ function Servizi() {
               })}
             </ul>
 
+            {/* Spacer spinge la nota e il link sempre in fondo */}
             <div className="card-spacer" />
 
+            {/* Nota posizionata subito sopra la linea divisoria */}
             {s.note && <p className="card-note">{s.note}</p>}
 
             {s.link && (
@@ -179,14 +181,6 @@ function Servizi() {
       <div className="servizi-contact">
         <div>
           <p className="contact-tagline"><span>Hai domande?</span> Siamo qui per te.</p>
-          <a
-            href="https://g.page/r/CaPcHbcYLry6EBM/review"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-review-link"
-           >
-              <span className="review-word-yellow">Valuta</span> la tua esperienza!<ArrowIcon />
-          </a>
         </div>
         <div className="contact-links">
           <a href="mailto:hermes.stp@libero.it" className="contact-link">
